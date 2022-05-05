@@ -85,14 +85,14 @@ the website and what format your ask for the IP address to be returned in.
 1. Point your browser to the official app URL at [https://yourip.app](https://yourip.app)
 2. Use your favorite command line web tool (e.g. curl, wget) to access one of the two endpoints (raw or json)
    ```sh
-   $ curl -L urip.fyi/json
+   $ curl -L yourIP.app/json
    {
      "ip": "123.45.6.78"
    }
    ```
 
    ```sh
-   $ curl -L urip.fyi/raw
+   $ curl -L yourIP.app/raw
    123.45.6.78
    ```
 
