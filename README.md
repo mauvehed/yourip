@@ -16,11 +16,19 @@
 <div align="center">
 <br />
 
+![GitHub branch checks state](https://img.shields.io/github/checks-status/mauvehed/yourip/main)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourIP.app)
 [![Project license](https://img.shields.io/github/license/mauvehed/yourip.svg?style=flat-square)](LICENSE)
 
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/mauvehed/yourip/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with love by mauvehed](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-mauvehed-ff1414.svg?style=flat-square)](https://github.com/mauvehed)
-
+<!--
+[![Open pull requests](https://img.shields.io/github/issues-pr-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/pulls)
+[![Open issues](https://img.shields.io/github/issues-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/commits/master)
+[![Contributors](https://img.shields.io/github/contributors/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/graphs/contributors)
+[![Prod Deploy](https://github.com/mauvehed/yourIP/actions/workflows/main.yml/badge.svg)](https://github.com/mauvehed/yourIP/actions/workflows/main.yml)
+![Prod deployments](https://img.shields.io/github/deployments/mauvehed/yourIP/stage?label=prod)
+![Staging deployments](https://img.shields.io/github/deployments/mauvehed/yourIP/stage?label=stage)
+-->
 </div>
 
 <details open="open">
