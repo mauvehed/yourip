@@ -16,11 +16,13 @@
 <div align="center">
 <br />
 
-![GitHub branch checks state](https://img.shields.io/github/checks-status/mauvehed/yourip/main)
+[![Deploy](https://github.com/mauvehed/yourIP/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/main.yml)
+[![CodeQL](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourIP.app)
 [![Project license](https://img.shields.io/github/license/mauvehed/yourip.svg?style=flat-square)](LICENSE)
 
 <!--
+![GitHub branch checks state](https://img.shields.io/github/checks-status/mauvehed/yourip/main)
 [![Open pull requests](https://img.shields.io/github/issues-pr-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/pulls)
 [![Open issues](https://img.shields.io/github/issues-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/commits/master)
