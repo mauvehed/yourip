@@ -15,10 +15,10 @@
 <div align="center">
 <br />
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d9e100dab3514f6bb04dbeba74a50de1)](https://app.codacy.com/gh/mauvehed/yourIP?utm_source=github.com&utm_medium=referral&utm_content=mauvehed/yourIP&utm_campaign=Badge_Grade_Settings)
 [![Deploy](https://github.com/mauvehed/yourIP/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/main.yml)
 [![CodeQL](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/mauvehed/yourip?targetFile=requirements.txt)](https://snyk.io/test/github/mauvehed/yourip?targetFile=requirements.txt)
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4ec1fc69d8a14048a80124167f6f7664)](https://www.codacy.com/gh/mauvehed/yourIP/dashboard)[![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourIP.app)
 [![Project license](https://img.shields.io/github/license/mauvehed/yourip.svg?style=flat-square)](LICENSE)
 
