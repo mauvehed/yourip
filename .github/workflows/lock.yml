@@ -21,7 +21,7 @@ jobs:
 
             If you encounter this same issue, please open a new issue and refer
             to this closed one.
-          pr-lock-inactive-days: "1"
+          pr-lock-inactive-days: "3"
           pr-lock-reason: ""
           pr-comment: >
             Pull Request closed and locked due to lack of activity.
