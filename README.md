@@ -9,7 +9,9 @@
   -
   <a href="https://github.com/mauvehed/yourip/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
   -
-  <a href="https://github.com/mauvehed/yourip/discussions">Ask a Question</a>
+  <a href="https://github.com/mauvehed/yourIP/issues/new?assignees=&labels=enhancement&template=03_CODEBASE_IMPROVEMENT.md&title=dev%3A+">Suggest Improvement</a>
+  -
+
 </div>
 
 <div align="center">
