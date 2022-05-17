@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "yourip"
+version = "0.1.0"
+description = "A simple web site to (dangerously) return yourIP"
+authors = ["mauvehed <mauvehed@attrition.org>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.1.2"
+gunicorn = "^20.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
