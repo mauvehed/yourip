@@ -61,7 +61,7 @@
 <table><tr><td>
 
 **yourIP** started as a simple web app to fulfill a common need I have of identifying my public IP without having
-to use other methods to relay it back to me. This is hashalf a purposeful tool and the other half a nice excuse to
+to use other methods to relay it back to me. This is half a purposeful tool and the other half a nice excuse to
 learn some new things and deployment technologies.
 
 <details>
