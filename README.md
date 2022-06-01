@@ -19,7 +19,9 @@
 
 ![Deployment](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 [![CodeQL](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml)
-#[![Known Vulnerabilities](https://snyk.io/test/github/mauvehed/yourIP/badge.svg)](https://snyk.io/test/github/mauvehed/yourIP)
+<!--
+[![Known Vulnerabilities](https://snyk.io/test/github/mauvehed/yourIP/badge.svg)](https://snyk.io/test/github/mauvehed/yourIP)
+-->
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4ec1fc69d8a14048a80124167f6f7664)](https://www.codacy.com/gh/mauvehed/yourIP/dashboard)[![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourIP.app)
 [![Project license](https://img.shields.io/github/license/mauvehed/yourip.svg?style=flat-square)](LICENSE)
