@@ -17,7 +17,7 @@
 <div align="center">
 <br />
 
-[![Deploy](https://github.com/mauvehed/yourIP/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/main.yml)
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 [![CodeQL](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/mauvehed/yourIP/badge.svg)](https://snyk.io/test/github/mauvehed/yourIP)
 
