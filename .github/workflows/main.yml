@@ -1,17 +1,13 @@
-name: Deploy
-
-on:
-  push:
-    branches:
-      - main
-
+name: Fly Deploy
+on: [push]
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: CDNievas/heroku-action@v1.0 # This is the action
-        with:
-          heroku_email: ${{secrets.HEROKU_EMAIL_ADDR}}
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "mvh-yourip"
+  deploy:
+      name: Deploy app
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: flyctl deploy --remote-only
+
