@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 def home_view():
     my_ip = get_ip()
-    html_raw = '<p><br><center><h1>Your IP address is: {} </h1></center>'
+    html_raw = '<p><br><center><img src="images/Calvin.png"><br><h2> {} </h2></center>'
     return html_raw.format(my_ip[0])
 
 @app.route("/json")
