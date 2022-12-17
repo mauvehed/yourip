@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 IMG_FOLDER = os.path.join('static','IMG')
-app.config('UPLOAD_FOLDER') = IMG_FOLDER
+app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
 @app.route("/")
 def home_view():
