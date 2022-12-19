@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "yourip"
 version = "0.1.0"
-description = "A simple web site to (dangerously) return yourIP"
-authors = ["mauvehed <mauvehed@attrition.org>"]
+description = "A simple web site to return yourIP"
+authors = ["mauvehed <mh@mvh.dev>"]
 license = "MIT"
 
 readme = "README.md"
