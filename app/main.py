@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, escape
 import os
 
 app = Flask(__name__,
@@ -22,7 +22,7 @@ def json_view():
 @app.route("/raw")
 def raw_view():
     my_ip = get_ip()
-    return my_ip[0]
+    return escape(my_ip[0])
 
 def get_ip():
     ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
