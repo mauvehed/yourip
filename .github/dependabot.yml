@@ -10,7 +10,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-    target-branch: "develop"
+    target-branch: "main""
     assignees:
       - "mauvehed"
   # Maintain dependencies for GitHub Actions
@@ -18,6 +18,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    target-branch: "develop"
+    target-branch: "main"
     assignees:
       - "mauvehed"
