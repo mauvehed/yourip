@@ -15,9 +15,10 @@ changelog:
       labels:
 		- minor
         - enhancement
-    - title: Security Changes 🛠
+    - title: Security/Dependency Changes 🛠
       labels:
 		- security
+		- dependencies
     - title: Other Changes
       labels:
         - "*"
