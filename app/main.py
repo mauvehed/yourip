@@ -16,8 +16,7 @@ def home_view():
 @app.route("/json")
 def json_view():
     my_ip = get_ip()
-    ip = {"ip" : my_ip[0]}
-    return ip
+    return {"ip" : my_ip[0]}
 
 @app.route("/raw")
 def raw_view():
@@ -26,8 +25,7 @@ def raw_view():
 
 def get_ip():
     ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
-    my_ip = tuple(map(str, ip_addr.split(', ')))
-    return my_ip
+    return tuple(map(str, ip_addr.split(', ')))
 
 if __name__ == "__main__":
     app.run()
