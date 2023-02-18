@@ -1,4 +1,4 @@
-name: Check PR using Sourcery
+name: Sourcery (PR check)
 
 on: pull_request
 
