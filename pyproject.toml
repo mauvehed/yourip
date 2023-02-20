@@ -11,7 +11,7 @@ repository = "https://github.com/mauvehed/yourIP"
 homepage = "https://yourIP.app/"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 Flask = "2.2.3"
 gunicorn = "^20.1.0"
 
