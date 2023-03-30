@@ -17,7 +17,7 @@
 <div align="center">
 <br />
 
-[![Deployment](https://github.com/mauvehed/yourIP/actions/workflows/main.yml/badge.svg)](https://github.com/mauvehed/yourIP/actions/workflows/main.yml)
+[![Deployment](https://github.com/mauvehed/yourIP/actions/workflows/deploy.yml/badge.svg)](https://github.com/mauvehed/yourIP/actions/workflows/deploy.yml)
 [![CodeQL](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4ec1fc69d8a14048a80124167f6f7664)](https://www.codacy.com/gh/mauvehed/yourIP/dashboard)[![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourIP.app)
@@ -29,7 +29,7 @@
 [![Open issues](https://img.shields.io/github/issues-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/commits/master)
 [![Contributors](https://img.shields.io/github/contributors/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/graphs/contributors)
-[![Prod Deploy](https://github.com/mauvehed/yourIP/actions/workflows/main.yml/badge.svg)](https://github.com/mauvehed/yourIP/actions/workflows/main.yml)
+[![Prod Deploy](https://github.com/mauvehed/yourIP/actions/workflows/deploy.yml/badge.svg)](https://github.com/mauvehed/yourIP/actions/workflows/deploy.yml)
 ![Prod deployments](https://img.shields.io/github/deployments/mauvehed/yourIP/stage?label=prod)
 ![Staging deployments](https://img.shields.io/github/deployments/mauvehed/yourIP/stage?label=stage)
 -->
