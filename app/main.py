@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template,
+from flask import Flask, request, render_template
 from markupsafe import escape
 import os
 
