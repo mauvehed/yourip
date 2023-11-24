@@ -59,7 +59,8 @@ def get_ip():
     Retrieves the IP address from the request.
 
     Returns:
-        tuple: A tuple containing a single string representing the IP address.
+        tuple: A tuple containing a single string representing the IP address
+               or a tuple containing a single string "Invalid IP Address" if the IP is invalid.
     """
     ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
 
@@ -67,7 +68,7 @@ def get_ip():
         ip_address = ipaddress.ip_address(ip_addr)
         return str(ip_address),
     except ValueError:
-        return "Invalid IP Address", 
+        return "Invalid IP Address",
 
 if __name__ == "__main__":
     app.run()
