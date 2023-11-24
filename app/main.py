@@ -30,7 +30,8 @@ def home_view():
     """
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Calvin.png')
     my_ip = get_ip()
-    return render_template("index.html", home_image=full_filename, my_ip_is=my_ip[0])
+    validated_ip = validate_ip(my_ip[0])
+    return render_template("index.html", home_image=full_filename, my_ip_is=validated_ip)
 
 @app.route("/json")
 def json_view():
@@ -59,16 +60,24 @@ def get_ip():
     Retrieves the IP address from the request.
 
     Returns:
-        tuple: A tuple containing a single string representing the IP address
-               or a tuple containing a single string "Invalid IP Address" if the IP is invalid.
+        tuple: A tuple containing the IP address information.
     """
     ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+    return tuple(map(str, ip_addr.split(', ')))
 
+def validate_ip(ip):
+    """
+    Validate the format of an IP address.
+
+    Returns:
+        If the IP address is valid, it returns the validated IP address as it was passed in.
+        str: If the IP address is invalid, it returns "Invalid IP Address" as a string.
+    """
     try:
-        ip_address = ipaddress.ip_address(ip_addr)
-        return str(ip_address),
+        ip_address = ipaddress.ip_address(ip)
+        return ip
     except ValueError:
-        return "Invalid IP Address",
+        return "Invalid IP Address"
 
 if __name__ == "__main__":
     app.run()
