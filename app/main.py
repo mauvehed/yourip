@@ -8,10 +8,11 @@ Functions:
     home_view: Renders the home view.
     json_view: Returns IP address information in JSON format.
     raw_view: Returns raw IP address information.
-    get_ip: Retrieves the IP address from the request.
+    get_ip: Retrieves the IP address from the request and checks for valid IP format.
 
 """
 import os
+import ipaddress
 from html import escape
 from flask import Flask, request, render_template, jsonify
 
@@ -61,7 +62,12 @@ def get_ip():
         tuple: A tuple containing the IP address information.
     """
     ip_addr = request.headers.get('X-Real-IP', request.remote_addr)
-    return tuple(map(str, ip_addr.split(', ')))
+
+    try:
+        ip_address = ipaddress.ip_address(ip_addr)
+        return str(ip_address),
+    except ValueError:
+        return "Invalid IP Address", 
 
 if __name__ == "__main__":
     app.run()
