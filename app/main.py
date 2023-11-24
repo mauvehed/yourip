@@ -61,7 +61,7 @@ def get_ip():
     Returns:
         tuple: A tuple containing the IP address information.
     """
-    ip_addr = request.headers.get('X-Real-IP', request.remote_addr)
+    ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
 
     try:
         ip_address = ipaddress.ip_address(ip_addr)
