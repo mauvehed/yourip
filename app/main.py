@@ -59,7 +59,7 @@ def get_ip():
     Retrieves the IP address from the request.
 
     Returns:
-        tuple: A tuple containing the IP address information.
+        tuple: A tuple containing a single string representing the IP address.
     """
     ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
 
