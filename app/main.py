@@ -12,7 +12,7 @@ Functions:
 
 """
 import os
-import ipaddress
+import socket
 from html import escape
 from flask import Flask, request, render_template, jsonify
 
@@ -30,7 +30,7 @@ def home_view():
     """
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Calvin.png')
     my_ip = get_ip()
-    validated_ip = validate_ip(my_ip[0])
+    validated_ip = my_ip[0] if validate_ip(my_ip[0]) else "Invalid IP Address"
     return render_template("index.html", home_image=full_filename, my_ip_is=validated_ip)
 
 @app.route("/json")
@@ -42,7 +42,8 @@ def json_view():
         dict: A dictionary containing the IP address information.
     """
     my_ip = get_ip()
-    return jsonify({"ip": my_ip[0]})
+    validated_ip = my_ip[0] if validate_ip(my_ip[0]) else "Invalid IP Address"
+    return jsonify({"ip": validated_ip})
 
 @app.route("/raw")
 def raw_view():
@@ -53,7 +54,8 @@ def raw_view():
         str: The properly escaped raw IP address information.
     """
     my_ip = get_ip()
-    return escape(my_ip[0])
+    validated_ip = my_ip[0] if validate_ip(my_ip[0]) else "Invalid IP Address"
+    return escape(validated_ip)
 
 def get_ip():
     """
@@ -69,15 +71,17 @@ def validate_ip(ip):
     """
     Validate the format of an IP address.
 
+    Args:
+        ip (str): The IP address to validate.
+
     Returns:
-        If the IP address is valid, it returns the validated IP address as it was passed in.
-        str: If the IP address is invalid, it returns "Invalid IP Address" as a string.
+        bool: True if the IP address is valid, False otherwise.
     """
     try:
-        ip_address = ipaddress.ip_address(ip)
-        return ip
-    except ValueError:
-        return "Invalid IP Address"
+        socket.inet_aton(ip)
+        return True
+    except socket.error:
+        return False
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == "__main__":  # pragma: no cover
+    app.run()  # pragma: no cover
