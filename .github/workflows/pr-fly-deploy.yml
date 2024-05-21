@@ -7,6 +7,7 @@ env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
   FLY_REGION: iad
   FLY_ORG: personal
+  GITHUB_REPOSITORY_NAME: yourip
 
 jobs:
   staging_app:
