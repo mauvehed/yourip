@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.12'
 
@@ -40,10 +40,16 @@ jobs:
     - name: Export dev-requirements.txt
       run: poetry export --without-hashes --with dev -f requirements.txt --output dev-requirements.txt
 
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git add requirements.txt dev-requirements.txt
+        git diff --cached --exit-code || echo "Changes detected" > changes_detected.txt
+
     - name: Commit and Push changes
+      if: steps.check_changes.outputs.changes_detected
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add requirements.txt dev-requirements.txt
         git commit -m "Update requirements files"
         git push
