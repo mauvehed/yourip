@@ -31,5 +31,5 @@ jobs:
         if: ${{ github.event.action == 'closed' }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment: yourip-pr-${{ github.event.number }}
+          environment: pr-${{ github.event.number }}-yourip
 
