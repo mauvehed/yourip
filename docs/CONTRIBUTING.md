@@ -1,39 +1,106 @@
-# Contributing
+# Contributing Guidelines
+
+Welcome! We're excited that you're interested in contributing to this project. Below are guidelines to help you get started.
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
-## Development environment setup
+## Table of Contents
 
-> **[TODO]**
-> Proceed to describe how to setup local development environment.
-> e.g:
+1. Getting Started
+2. Testing Locally
+3. Running Tests
+4. Code Coverage
+5. Continuous Integration
+6. Submitting Changes
 
-To set up a development environment, please follow these steps:
+## Getting Started
 
-1. Clone the repo
+1. Fork the repository.
+2. Clone your fork:
 
-   ```sh
-   git clone https://github.com/mauvehed/yourip
-   ```
+```bash
+git clone https://github.com/your-username/yourIP.git
+```
 
-2. TODO
+3. Install dependencies using Poetry:
 
-## Testing locally
+```bash
+poetry install --with dev
+```
 
-Please utilize the `debug.sh` script to run a local copy of the app. This will execute and bind to localhost on port 80
+## Testing Locally
 
-## Issues and feature requests
+To test the application locally:
 
-You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature?  You can help us by [submitting an issue on GitHub](https://github.com/mauvehed/yourip/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
+1. Activate the virtual environment:
 
-Please try to create bug reports that are:
+```bash
+poetry shell
+```
 
-- _Reproducible._ Include steps to reproduce the problem.
-- _Specific._ Include as much detail as possible: which version, what environment, etc.
-- _Unique._ Do not duplicate existing opened issues.
-- _Scoped to a Single Bug._ One bug per report.
+2. Run the Flask app:
 
-**Even better: Submit a pull request with a fix or new feature!**
+```bash
+flask --app app/main.py --debug run --host 127.0.0.1
+```
+
+3. Visit <http://127.0.0.1:5000> in your browser.
+
+## Running Tests
+
+We use pytest for testing. To run tests:
+
+1. Ensure you're in the virtual environment:
+
+```bash
+poetry shell
+```
+
+2. Run the tests:
+
+```bash
+pytest
+```
+
+## Code Coverage
+
+We use coverage.py to measure code coverage. To generate a coverage report:
+
+1. Run the tests with coverage:
+
+```bash
+coverage run -m pytest
+```
+
+2. Generate a coverage report:
+
+```bash
+coverage report
+```
+
+3. Generate an HTML coverage report:
+
+```bash
+coverage html
+```
+
+4. Open htmlcov/index.html in your browser to view the detailed coverage report.
+
+## Continuous Integration
+
+We've set up GitHub Actions for Continuous Integration (CI) to automatically run tests and generate coverage reports on every commit. The configuration is located in `.github/workflows/python-app.yml`.
+
+### To set up GitHub Actions
+
+1. Push your changes to your fork.
+2. Create a pull request to the main repository.
+3. The CI will automatically run and display results on the pull request page.
+
+## Submitting Changes
+
+1. Ensure all tests pass.
+2. Ensure code coverage is adequate.
+3. Create a pull request with a clear description of your changes.
 
 ### How to submit a Pull Request
 
@@ -46,53 +113,4 @@ Please try to create bug reports that are:
 5. Push to the branch (`git push origin feat/amazing_feature`)
 6. [Open a Pull Request](https://github.com/mauvehed/yourip/compare?expand=1)
 
-## Maintainers
-
-This document is intended to assist the maintainers of this repository and software package with various tasks.
-
-### Miscellaneous tasks
-
-#### Updating dependencies via poetry
-
-```bash
-poetry update
-```
-
-#### Updating supported versions of python
-
-##### Update GitHub Actions
-
-1. Update `python-version` in `.github/workflows/pylint.yml`
-2. Update `python-version` in `.github/workflows/sourcery.yml`
-3. Update `python-version` in `.sourcery.yaml`
-
-##### Update pyproject.toml
-
-Update the tool.poetry.dependencies.python field in `pyproject.toml`
-
-#### Updating requirements.txt
-
-```bash
-poetry export --without-hashes -f requirements.txt --output requirements.txt
-```
-
-### Releasing a new version
-
-#### Update all the things
-
-1. Update dependencies via `Updating dependencies via poetry` above
-2. Update requirements.txt via `Updating requirements.txt` above
-3. Update the value of `version` in pyproject.toml to match the new release number
-4. Push a new branch for the release
-5. Merge branch
-6. Proceed to `Publish a new version on Github.com` below
-
-#### Publish a new version on Github.com
-
-1. [Draft New Release Notes](https://github.com/mauvehed/trackerstatus/releases/new) on Github.com
-2. Create a new `Tag` matching the current format (e.g. "v0.1.5")
-3. Leave Target set to `main``
-4. Set the `Release Title` to the same as the `Tag`
-5. Click `Generate Release Notes`
-6. Leave `Set as the latest release` checked
-7. Click on `Publish Release`
+Thank you for contributing! Your help is much appreciated. If you have any questions, feel free to open an issue.
