@@ -36,7 +36,7 @@ poetry update
 
 ### Updating Supported Versions of Python
 
-1. Update python-version in .github/workflows/pylint.yml
+1. Update python-version in .github/workflows/pytests-coverage.yml
 1. Update python-version in .github/workflows/sourcery.yml
 1. Update python-version in .github/workflows/update-requirements.yml
 1. Update python-version in .github/workflows/release.yml
