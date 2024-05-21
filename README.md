@@ -56,26 +56,9 @@
 
 ## About
 
-<table><tr><td>
-
 **yourIP** started as a simple web app to fulfill a common need I have of identifying my public IP without having
 to use other methods to relay it back to me. This is half a purposeful tool and the other half a nice excuse to
 learn some new things and deployment technologies.
-
-<details>
-<summary>Screenshots</summary>
-<br>
-
-> **[?]**
-> Please provide your screenshots here.
-
-|                               Home Page                               |                               Login Page                               |
-| :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
-
-</details>
-
-</td></tr></table>
 
 ### Built With
 
@@ -86,14 +69,17 @@ learn some new things and deployment technologies.
 ## Usage
 
 ### Development
+
 Please see [Contributing](#contributing) for how to setup a dev environment
 
 ### Using the website
+
 The current deployment of this tool is hosted and available to all online. You will have a couple choices for how you access
 the website and what format your ask for the IP address to be returned in.
 
 1. Point your browser to the official app URL at [https://yourip.app](https://yourip.app)
 2. Use your favorite command line web tool (e.g. curl, wget) to access one of the two endpoints (raw or json)
+
    ```sh
    $ curl -L yourIP.app/json
    {
@@ -105,7 +91,6 @@ the website and what format your ask for the IP address to be returned in.
    $ curl -L yourIP.app/raw
    123.45.6.78
    ```
-
 
 ## Roadmap
 
@@ -122,10 +107,22 @@ Reach out to the maintainer at one of the following places:
 - Contact options listed on [this GitHub profile](https://github.com/mauvehed)
 - @mauvehed just about anywhere else online
 
+### Issues and feature requests
+
+You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature?  You can help us by [submitting an issue on GitHub](https://github.com/mauvehed/yourip/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
+
+Please try to create bug reports that are:
+
+- _Reproducible._ Include steps to reproduce the problem.
+- _Specific._ Include as much detail as possible: which version, what environment, etc.
+- _Unique._ Do not duplicate existing opened issues.
+- _Scoped to a Single Bug._ One bug per report.
+
+**Even better: Submit a pull request with a fix or new feature!**
+
 ## Contributing
 
 First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
-
 
 Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
 
