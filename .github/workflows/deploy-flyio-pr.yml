@@ -2,6 +2,7 @@ name: Deploy PR to Fly.IO
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
+  workflow_dispatch:
 
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

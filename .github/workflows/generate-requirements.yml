@@ -9,6 +9,7 @@ on:
     paths:
       - 'pyproject.toml'
       - 'poetry.lock'
+  workflow_dispatch:
 
 jobs:
   update-requirements:
