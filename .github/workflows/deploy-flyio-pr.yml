@@ -31,7 +31,7 @@ jobs:
         uses: superfly/fly-pr-review-apps@1.2.1
 
       - name: Clean up GitHub environment
-        uses: strumwolf/delete-deployment-environment@v2
+        uses: strumwolf/delete-deployment-environment@v3
         if: ${{ github.event.action == 'closed' }}
         with:
           # The provided token needs permission for admin write:org
