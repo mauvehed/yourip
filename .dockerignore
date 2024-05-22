@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+**/__pycache__
+**/*.py[cod]
+**/*$py.class
+
+# Poetry virtual environments
+**/.venv
+
+# Project specific files
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+
+# Database files
+**/*.dbmdl
+**/*.jfm
+
+# Build directories
+**/bin
+**/obj
+
+# Node modules
+**/node_modules
+**/npm-debug.log
+
+# Docker files
+**/docker-compose*
+**/compose*
+**/Dockerfile*
+
+# Helm charts and values
+**/charts
+**/secrets.dev.yaml
+**/values.dev.yaml
+
+# Documentation files
+LICENSE
+README.md
+
+# Fly.io configuration
+fly.toml
+
+# Logs
+*.log
+
+# Tests
+tests
