@@ -3,6 +3,7 @@ name: Deploy new release to Fly.IO
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   deploy:
