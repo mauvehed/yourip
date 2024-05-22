@@ -1,4 +1,4 @@
-name: Release
+name: Release new version
 
 on:
   push:
@@ -37,9 +37,5 @@ jobs:
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2.0.5
-      with:
-        files: |
-          requirements.txt
-          dev-requirements.txt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
