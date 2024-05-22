@@ -1,4 +1,4 @@
-name: Update Requirements
+name: Generate requirements files
 
 on:
   push:

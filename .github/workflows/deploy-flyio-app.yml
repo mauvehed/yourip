@@ -1,4 +1,4 @@
-name: Deployment
+name: Deploy new release to Fly.IO
 
 on:
   release:
