@@ -12,11 +12,14 @@ jobs:
   staging_app:
     runs-on: ubuntu-latest
 
+    # Only run one deployment at a time per PR.
     concurrency:
       group: pr-${{ github.event.number }}
 
+    # Create a GitHub deployment environment per review app so it shows up
+    # in the pull request UI.
     environment:
-      name: yourip-pr-${{ github.event.number }}
+      name: pr-${{ github.event.number }}
       url: ${{ steps.deploy.outputs.url }}
 
     steps:
@@ -27,9 +30,9 @@ jobs:
         uses: superfly/fly-pr-review-apps@1.2.1
 
       - name: Clean up GitHub environment
-        uses: strumwolf/delete-deployment-environment@v3
+        uses: strumwolf/delete-deployment-environment@v2
         if: ${{ github.event.action == 'closed' }}
         with:
+          # The provided token needs permission for admin write:org
           token: ${{ secrets.GITHUB_TOKEN }}
-          environment: pr-${{ github.event.number }}-yourip
-
+          environment: pr-${{ github.event.number }}
