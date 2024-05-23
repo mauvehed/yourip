@@ -1,14 +1,14 @@
-version: '3.4'
+version: '3.8'
 
 services:
-  yourip:
-    image: yourip
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 -m flask run --no-debugger --no-reload --host 0.0.0.0 --port 5000"]
+  web:
+    image: yourip:latest
+    container_name: yourip_debug
     ports:
-      - 5000:5000
-      - 5678:5678
+      - "8080:8080"
     environment:
-      - FLASK_APP=app/main.py
+      FLASK_ENV: development
+      FLASK_APP: app/main.py
+    command: poetry run flask run --host=0.0.0.0 --port=8080
+    volumes:
+      - .:/app
