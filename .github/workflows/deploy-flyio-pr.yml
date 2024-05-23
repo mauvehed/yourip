@@ -1,7 +1,7 @@
 name: Deploy PR to Fly.IO
 on:
   pull_request:
-    types: [opened, reopened, synchronize, closed]
+    types: [closed]
   workflow_dispatch:
 
 env:
