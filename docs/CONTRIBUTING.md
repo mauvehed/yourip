@@ -11,7 +11,6 @@ When contributing to this repository, please first discuss the change you wish t
 1. Running Tests
 1. Code Coverage
 1. Continuous Integration
-1. Using Docker & Compose
 1. Submitting Changes
 
 ## Getting Started
@@ -23,29 +22,58 @@ When contributing to this repository, please first discuss the change you wish t
 git clone https://github.com/your-username/yourIP.git
 ```
 
-3. Install dependencies using Poetry:
+## Testing Locally
+
+### Running the app through poetry
+
+To test the application locally:
+
+1. Install dependencies using Poetry:
 
 ```bash
 poetry install --with dev
 ```
 
-## Testing Locally
-
-To test the application locally:
-
-1. Activate the virtual environment:
+2. Activate the virtual environment:
 
 ```bash
 poetry shell
 ```
 
-2. Run the Flask app:
+3. Run the Flask app:
 
 ```bash
-flask --app app/main.py --debug run --host 127.0.0.1
+poetry run flask --app app/main.py --debug run --host 127.0.0.1 --port 8080
 ```
 
-3. Visit <http://127.0.0.1:5000> in your browser.
+4. Visit <http://127.0.0.1:8080> in your browser.
+
+### Using docker-compose.debug.yml
+
+To run the application in development mode with debugging:
+
+#### Building the Docker Image
+
+To build the Docker image and tag it as yourip:
+
+1. Ensure you are in the root directory of the repository where the Dockerfile is located.
+1. Build the Docker image:
+
+```bash
+docker build -t yourip:latest .
+```
+
+This command builds the Docker image using the Dockerfile in the current directory and tags it as yourip:latest.
+
+#### Run the Docker Compose command:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.debug.yml up -d
+```
+
+This command uses both docker-compose.yml and docker-compose.debug.yml to start the container in detached mode with development settings.
+
+
 
 ## Running Tests
 
@@ -96,45 +124,6 @@ We've set up GitHub Actions for Continuous Integration (CI) to automatically run
 1. Push your changes to your fork.
 2. Create a pull request to the main repository.
 3. The CI will automatically run and display results on the pull request page.
-
-## Using Docker & Compose
-
-### Building the Docker Image
-
-To build the Docker image and tag it as yourip:
-
-1. Ensure you are in the root directory of the repository where the Dockerfile is located.
-1. Build the Docker image:
-
-```bash
-docker build -t yourip:latest .
-```
-
-This command builds the Docker image using the Dockerfile in the current directory and tags it as yourip:latest.
-
-### Using docker-compose.yml
-
-To run the application using the production settings:
-
-#### Run the Docker Compose command:
-
-```bash
-docker compose up -d
-```
-
-This command uses docker-compose.yml to start the container in detached mode.
-
-### Using docker-compose.debug.yml
-
-To run the application in development mode with debugging:
-
-#### Run the Docker Compose command:
-
-```bash
-docker compose -f docker-compose.yml -f docker-compose.debug.yml up -d
-```
-
-This command uses both docker-compose.yml and docker-compose.debug.yml to start the container in detached mode with development settings.
 
 ## Submitting Changes
 
