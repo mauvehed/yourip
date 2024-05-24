@@ -5,10 +5,14 @@ on:
     paths:
       - 'Dockerfile'
       - '.github/workflows/publish-docker-image.yml'
-  workflow_dispatch:
-  # Triggered by a repository_dispatch event to allow external systems to initiate the workflow
   repository_dispatch:
     types: [publish-docker-image]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Docker image tag'
+        required: true
+        default: 'nightly'
 
 jobs:
   build-and-publish:
@@ -31,22 +35,34 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image with version tag
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/yourip:${{ github.event.client_payload.tag }}
-            ghcr.io/${{ github.repository_owner }}/yourip:latest
+      - name: Set TAG variable
+        run: |
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            TAG="${{ github.event.client_payload.tag }}"
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            if [[ "${{ github.event.head_commit.message }}" == *"Update publish-docker-image.yml"* ]]; then
+              TAG="test"
+            else
+              TAG="nightly"
+            fi
+          else
+            echo "Unsupported event: ${{ github.event_name }}"
+            exit 1
+          fi
 
-      - name: Build and push Docker image with nightly tag
-        if: github.event.client_payload.tag == 'nightly'
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ github.repository_owner }}/yourip:nightly
+          if [ -z "$TAG" ]; then
+            echo "TAG is not defined. Please ensure that the tag is set in your environment variables or input parameters."
+            exit 1
+          fi
+          echo "TAG=$TAG" >> $GITHUB_ENV
+
+      - name: Build and push Docker image
+        run: |
+          docker buildx build \
+            --tag ghcr.io/${{ github.repository_owner }}/yourip:${TAG} \
+            --push .
 
       - name: Logout from GHCR
         run: docker logout ghcr.io

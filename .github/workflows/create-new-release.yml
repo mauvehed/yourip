@@ -49,4 +49,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
         event-type: publish-docker-image
-        client-payload: '{"tag": "${{ github.ref }}"}'
+        client-payload: '{"tag": "${{ github.ref_name }}"}'
