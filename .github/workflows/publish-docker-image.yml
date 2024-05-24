@@ -5,6 +5,7 @@ on:
     paths:
       - 'Dockerfile'
       - '.github/workflows/publish-docker-image.yml'
+  # Triggered by a repository_dispatch event to allow external systems to initiate the workflow
   repository_dispatch:
     types: [publish-docker-image]
 
