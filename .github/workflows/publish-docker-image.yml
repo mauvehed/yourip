@@ -13,6 +13,8 @@ on:
         description: 'Docker image tag'
         required: true
         default: 'nightly'
+  release:
+    types: [published]
 
 jobs:
   build-and-publish:
@@ -41,6 +43,8 @@ jobs:
             TAG="${{ github.event.client_payload.tag }}"
           elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             TAG="${{ github.event.inputs.tag }}"
+          elif [ "${{ github.event_name }}" == "release" ]; then
+            TAG="latest"
           elif [ "${{ github.event_name }}" == "push" ]; then
             if [[ "${{ github.event.head_commit.message }}" == *"Update publish-docker-image.yml"* ]]; then
               TAG="test"
@@ -62,7 +66,7 @@ jobs:
         run: |
           docker buildx build \
             --tag ghcr.io/${{ github.repository_owner }}/yourip:${TAG} \
-            --tag ghcr.io/${{ github.repository_owner }}/yourip:latest \
+            $(if [ "$TAG" = "latest" ]; then echo "--tag ghcr.io/${{ github.repository_owner }}/yourip:latest"; fi) \
             --push .
 
       - name: Logout from GHCR
