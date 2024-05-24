@@ -4,11 +4,14 @@ on:
   push:
     paths:
       - 'Dockerfile'
-      - '.github/workflows/publish-docker-image.yml'
-  workflow_dispatch:
-  # Triggered by a repository_dispatch event to allow external systems to initiate the workflow
   repository_dispatch:
     types: [publish-docker-image]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Docker image tag'
+        required: true
+        default: 'nightly'
 
 jobs:
   build-and-publish:
@@ -31,22 +34,24 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image with version tag
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/yourip:${{ github.event.client_payload.tag }}
-            ghcr.io/${{ github.repository_owner }}/yourip:latest
+      - name: Build and push Docker image
+        run: |
+          TAG="${{ github.event.client_payload.tag || github.event.inputs.tag }}"
+          if [ -z "${TAG}" ]; then
+            echo "Tag is not defined"
+            exit 1
+          fi
 
-      - name: Build and push Docker image with nightly tag
-        if: github.event.client_payload.tag == 'nightly'
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ github.repository_owner }}/yourip:nightly
+          if [ "${TAG}" = "nightly" ]; then
+            docker buildx build \
+              --tag ghcr.io/${{ github.repository_owner }}/yourip:nightly \
+              --push .
+          else
+            docker buildx build \
+              --tag ghcr.io/${{ github.repository_owner }}/yourip:${TAG} \
+              --tag ghcr.io/${{ github.repository_owner }}/yourip:latest \
+              --push .
+          fi
 
       - name: Logout from GHCR
         run: docker logout ghcr.io
