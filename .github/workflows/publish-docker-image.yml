@@ -39,6 +39,9 @@ jobs:
         run: |
           TAG="${{ github.event.client_payload.tag || github.event.inputs.tag }}"
           if [ -z "${TAG}" ]; then
+            echo "Error: TAG is not defined. Please ensure that the tag is set in your environment variables or input parameters."
+            exit 1
+          fi
             echo "Tag is not defined"
             exit 1
           fi
