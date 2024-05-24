@@ -35,30 +35,34 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image
+      - name: Set TAG variable
         run: |
-          TAG="${{ github.event.client_payload.tag || github.event.inputs.tag }}"
-          if [ -z "${TAG}" ]; then
-            echo "Error: TAG is not defined. Please ensure that the tag is set in your environment variables or input parameters."
-            exit 1
-          fi
-            echo "Tag is not defined"
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            TAG="${{ github.event.client_payload.tag }}"
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          elif [ "${{ github.event_name }}" == "push" ]; then
+            if [[ "${{ github.event.head_commit.message }}" == *"Update publish-docker-image.yml"* ]]; then
+              TAG="test"
+            else
+              TAG="nightly"
+            fi
+          else
+            echo "Unsupported event: ${{ github.event_name }}"
             exit 1
           fi
 
-          if [ "${TAG}" = "nightly" ]; then
-            docker buildx build \
-              --tag ghcr.io/${{ github.repository_owner }}/yourip:nightly \
-              --push .
-          elif [ "${TAG}" = "test" ]; then
-            docker buildx build \
-              --tag ghcr.io/${{ github.repository_owner }}/yourip:test \
-              --push .
-          else
-            docker buildx build \
-              --tag ghcr.io/${{ github.repository_owner }}/yourip:${TAG} \
-              --tag ghcr.io/${{ github.repository_owner }}/yourip:latest \
-              --push .
+          if [ -z "$TAG" ]; then
+            echo "TAG is not defined. Please ensure that the tag is set in your environment variables or input parameters."
+            exit 1
+          fi
+          echo "TAG=$TAG" >> $GITHUB_ENV
+
+      - name: Build and push Docker image
+        run: |
+          docker buildx build \
+            --tag ghcr.io/${{ github.repository_owner }}/yourip:${TAG} \
+            --push .
 
       - name: Logout from GHCR
         run: docker logout ghcr.io
