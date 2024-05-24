@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'Dockerfile'
+      - '.github/workflows/publish-docker-image.yml'
   repository_dispatch:
     types: [publish-docker-image]
   workflow_dispatch:
@@ -46,12 +47,15 @@ jobs:
             docker buildx build \
               --tag ghcr.io/${{ github.repository_owner }}/yourip:nightly \
               --push .
+          elif [ "${TAG}" = "test" ]; then
+            docker buildx build \
+              --tag ghcr.io/${{ github.repository_owner }}/yourip:test \
+              --push .
           else
             docker buildx build \
               --tag ghcr.io/${{ github.repository_owner }}/yourip:${TAG} \
               --tag ghcr.io/${{ github.repository_owner }}/yourip:latest \
               --push .
-          fi
 
       - name: Logout from GHCR
         run: docker logout ghcr.io
