@@ -1,4 +1,4 @@
-name: Deploy PR to Fly.IO
+name: PR Deploy
 on:
   pull_request:
     types: [closed]
