@@ -20,39 +20,11 @@
 [![Deployment](https://github.com/mauvehed/yourip/actions/workflows/deploy-flyio-app.yml/badge.svg)](https://github.com/mauvehed/yourip/actions/workflows/deploy-flyio-app.yml)
 [![CodeQL](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP/actions/workflows/codeql-analysis.yml)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4ec1fc69d8a14048a80124167f6f7664)](https://www.codacy.com/gh/mauvehed/yourIP/dashboard)[![Project license](https://img.shields.io/github/license/mauvehed/yourip.svg?style=flat-square)](LICENSE)<!-- Remove website check/Broken on Nov 24, 2024 [![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourIP.app) -->
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4ec1fc69d8a14048a80124167f6f7664)](https://www.codacy.com/gh/mauvehed/yourIP/dashboard)
+[![Project license](https://img.shields.io/github/license/mauvehed/yourip.svg?style=flat-square)](LICENSE)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2FyourIP.app)](https://yourip.app)
 
-<!--
-![GitHub branch checks state](https://img.shields.io/github/checks-status/mauvehed/yourip/main)
-[![Open pull requests](https://img.shields.io/github/issues-pr-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/pulls)
-[![Open issues](https://img.shields.io/github/issues-raw/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/issues)
-[![Last Commit](https://img.shields.io/github/last-commit/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/commits/master)
-[![Contributors](https://img.shields.io/github/contributors/mauvehed/yourip?style=flat&logo=appveyor&logoColor=turquoise)](https://github.com/mauvehed/yourip/graphs/contributors)
-[![Prod Deploy](https://github.com/mauvehed/yourIP/actions/workflows/deploy.yml/badge.svg)](https://github.com/mauvehed/yourIP/actions/workflows/deploy.yml)
-![Prod deployments](https://img.shields.io/github/deployments/mauvehed/yourIP/stage?label=prod)
-![Staging deployments](https://img.shields.io/github/deployments/mauvehed/yourIP/stage?label=stage)
--->
 </div>
-
-<details open="open">
-<summary>Table of Contents</summary>
-
-- [About](#about)
-  - [Built With](#built-with)
-- [Usage](#usage)
-  - [Development](#development)
-  - [Using the website](#using-the-website)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [Contributing](#contributing)
-- [Authors & contributors](#authors--contributors)
-- [Security](#security)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-
-</details>
-
----
 
 ## About
 
@@ -92,21 +64,6 @@ the website and what format your ask for the IP address to be returned in.
    123.45.6.78
    ```
 
-## Roadmap
-
-See the [open issues](https://github.com/mauvehed/yourip/issues) for a list of proposed features (and known issues).
-
-- [Top Feature Requests](https://github.com/mauvehed/yourip/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Top Bugs](https://github.com/mauvehed/yourip/issues?q=is%3Aissue+is%3Aopen+label%3Abug+sort%3Areactions-%2B1-desc) (Add your votes using the 👍 reaction)
-- [Newest Bugs](https://github.com/mauvehed/yourip/issues?q=is%3Aopen+is%3Aissue+label%3Abug) (Squash Em!)
-
-## Support
-
-Reach out to the maintainer at one of the following places:
-
-- Contact options listed on [this GitHub profile](https://github.com/mauvehed)
-- @mauvehed just about anywhere else online
-
 ### Issues and feature requests
 
 You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature?  You can help us by [submitting an issue on GitHub](https://github.com/mauvehed/yourip/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
@@ -125,12 +82,6 @@ Please try to create bug reports that are:
 First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
 
 Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
-
-## Authors & contributors
-
-The original setup of this repository is by [mauvehed](https://github.com/mauvehed).
-
-For a full list of all authors and contributors, see [the contributors page](https://github.com/mauvehed/yourip/contributors).
 
 ## Security
 
