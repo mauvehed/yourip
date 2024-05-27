@@ -19,7 +19,7 @@ poetry-plugin-export = "^1.7.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.1"
-coverage = "^7.5.1"
+coverage = "^7.5.2"
 mypy = "^1.10.0"
 
 [build-system]
