@@ -18,7 +18,7 @@ Releases are automated via GitHub Actions. When a new tag is pushed following th
 
 To create a new release:
 
-1. Update the version in `pyproject.toml`.
+1. Update the `version` in `pyproject.toml`.
 2. Push a new tag following the format `v*.*.*` (e.g., `v1.2.3`).
 
    ```bash
@@ -36,13 +36,13 @@ poetry update
 
 ### Updating Supported Versions of Python
 
-1. Update python-version in .github/workflows/pytests-coverage.yml
-1. Update python-version in .github/workflows/sourcery.yml
-1. Update python-version in .github/workflows/update-requirements.yml
-1. Update python-version in .github/workflows/release.yml
-1. Update python-version in .sourcery.yaml
-1. Update pyproject.toml
-1. Update the tool.poetry.dependencies.python field in pyproject.toml.
+1. Update `python-version` in `.github/workflows/create-new-release.yml`
+1. Update `python-version` in `.github/workflows/generate-requirements.yml`
+1. Update `python-version` in `.github/workflows/mypy-linting.yml`
+1. Update `python-version` in `.github/workflows/pytestts-coverage.yml`
+1. Update `python-version` in `.github/workflows/sourcery.yml`
+1. Update `python-version` in `.sourcery.yaml`
+1. Update `tool.poetry.dependencies.python` field in pyproject.toml
 
 ### Updating `requirements.txt` and `dev-requirements.txt`
 
