@@ -1,4 +1,6 @@
 # .pre-commit-config.yaml
+# This file contains the configuration for pre-commit hooks.
+# Each hook helps maintain code quality by running automated checks before commits.
 #
 exclude: '(\..*\.y[a]?ml|\.github/workflows)'
 repos:
