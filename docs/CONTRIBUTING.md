@@ -73,8 +73,6 @@ docker compose -f docker-compose.yml -f docker-compose.debug.yml up -d
 
 This command uses both docker-compose.yml and docker-compose.debug.yml to start the container in detached mode with development settings.
 
-
-
 ## Running Tests
 
 We use pytest for testing. To run tests:

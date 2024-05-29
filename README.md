@@ -66,7 +66,7 @@ the website and what format your ask for the IP address to be returned in.
 
 ### Issues and feature requests
 
-You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature?  You can help us by [submitting an issue on GitHub](https://github.com/mauvehed/yourip/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
+You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/mauvehed/yourip/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!
 
 Please try to create bug reports that are:
 
