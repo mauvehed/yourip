@@ -14,7 +14,7 @@ homepage = "https://yourIP.app/"
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "3.0.3"
-gunicorn = "^22.0.0"
+gunicorn = "^23.0.0"
 markupsafe = "^2.1.5"
 
 [tool.poetry.group.dev.dependencies]
