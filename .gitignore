@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/flask,python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=flask,python,visualstudiocode
 
+### Deployment Providers ###
+.vercel/
+
 ### Flask ###
 instance/*
 !instance/.gitignore
