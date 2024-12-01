@@ -26,6 +26,10 @@
 
 </div>
 
+## Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/6e9eb0a133740f883a3a00601d4f4707607d2db5.svg "Repobeats analytics image")
+
 ## About
 
 **yourIP** started as a simple web app to fulfill a common need I have of identifying my public IP without having
