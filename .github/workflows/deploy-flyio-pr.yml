@@ -1,7 +1,8 @@
 name: PR Deploy
 on:
-  pull_request:
-    types: [closed]
+# Disabled for move to vercel
+#  pull_request:
+#    types: [closed]
   workflow_dispatch:
 
 env:
