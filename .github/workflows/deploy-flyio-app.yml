@@ -1,9 +1,10 @@
 name: Prod Deploy
 
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
+# Disabled for move to vercel
+#  pull_request:
+#    types: [closed]
+workflow_dispatch:
 
 jobs:
   deploy:
