@@ -21,7 +21,7 @@ zipp = ">=3.19.1"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
 coverage = "^7.6.8"
-mypy = "^1.13.0"
+mypy = "^1.14.0"
 poetry-plugin-export = "^1.8.0"
 
 [build-system]
